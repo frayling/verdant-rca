@@ -1545,7 +1545,7 @@ class EventItem(Page, SocialFields):
     specific_directions_link = models.URLField(blank=True, help_text=help_text('rca.EventItem', 'specific_directions_link'))
     gallery = models.CharField("RCA galleries and rooms", max_length=255, choices=EVENT_GALLERY_CHOICES, blank=True, help_text=help_text('rca.EventItem', 'gallery'))
     special_event = models.BooleanField("Highlight as special event on signage", default=False, help_text=help_text('rca.EventItem', 'special_event', default="Toggling this is a quick way to remove/add an event from signage without deleting the screens defined below"))
-    cost = RichTextField(help_text=help_text('rca.EventItem', 'cost'))
+    cost = RichTextField(blank=True, help_text=help_text('rca.EventItem', 'cost'))
     eventbrite_id = models.CharField(max_length=255, blank=True, help_text=help_text('rca.EventItem', 'eventbrite_id', default="Must be a ten-digit number. You can find for you event ID by logging on to Eventbrite, then going to the Manage page for your event. Once on the Manage page, look in the address bar of your browser for eclass=XXXXXXXXXX. This ten-digit number after eclass= is the event ID."))
     show_on_homepage = models.BooleanField(help_text=help_text('rca.EventItem', 'show_on_homepage'))
     listing_intro = models.CharField(max_length=100, blank=True, help_text=help_text('rca.EventItem', 'listing_intro', default="Used only on pages listing event items"))
